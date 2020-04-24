@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487A21B24527CF000453F41 /* AppDelegate.swift */; };
-		8487A21E24527CF000453F41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487A21D24527CF000453F41 /* SceneDelegate.swift */; };
 		8487A22024527CF000453F41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487A21F24527CF000453F41 /* ViewController.swift */; };
 		8487A22324527CF000453F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487A22124527CF000453F41 /* Main.storyboard */; };
 		8487A22524527CF400453F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8487A22424527CF400453F41 /* Assets.xcassets */; };
@@ -35,9 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8487A21824527CF000453F41 /* PhotoBin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8487A21824527CF000453F41 /* PrivatePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivatePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8487A21B24527CF000453F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8487A21D24527CF000453F41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8487A21F24527CF000453F41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8487A22224527CF000453F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8487A22424527CF400453F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +87,7 @@
 		8487A21924527CF000453F41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8487A21824527CF000453F41 /* PhotoBin.app */,
+				8487A21824527CF000453F41 /* PrivatePhotos.app */,
 				8487A22E24527CF500453F41 /* PhotoBinTests.xctest */,
 				8487A23924527CF500453F41 /* PhotoBinUITests.xctest */,
 			);
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				8487A21B24527CF000453F41 /* AppDelegate.swift */,
-				8487A21D24527CF000453F41 /* SceneDelegate.swift */,
 				8487A21F24527CF000453F41 /* ViewController.swift */,
 				8487A22124527CF000453F41 /* Main.storyboard */,
 				8487A22424527CF400453F41 /* Assets.xcassets */,
@@ -145,7 +142,7 @@
 			);
 			name = PhotoBin;
 			productName = PhotoBin;
-			productReference = 8487A21824527CF000453F41 /* PhotoBin.app */;
+			productReference = 8487A21824527CF000453F41 /* PrivatePhotos.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8487A22D24527CF500453F41 /* PhotoBinTests */ = {
@@ -261,7 +258,6 @@
 			files = (
 				8487A22024527CF000453F41 /* ViewController.swift in Sources */,
 				8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */,
-				8487A21E24527CF000453F41 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,15 +430,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5JXPPL33H;
+				DEVELOPMENT_TEAM = 28HAFS52JT;
 				INFOPLIST_FILE = PhotoBin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vipin.PhotoBin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vipin.privatephotos;
+				PRODUCT_NAME = PrivatePhotos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,15 +450,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5JXPPL33H;
+				DEVELOPMENT_TEAM = 28HAFS52JT;
 				INFOPLIST_FILE = PhotoBin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vipin.PhotoBin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vipin.privatephotos;
+				PRODUCT_NAME = PrivatePhotos;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
