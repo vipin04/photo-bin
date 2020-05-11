@@ -10,6 +10,8 @@ import UIKit
 
 class SearchController: UIViewController {
     
+    weak var coordinator: SearchCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -16,6 +16,11 @@
 		8452EB4C2455AB78002DA650 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB4A2455AB78002DA650 /* SearchController.swift */; };
 		8452EB4D2455AB78002DA650 /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452EB4B2455AB78002DA650 /* SearchController.xib */; };
 		8452EB4F2455B8E1002DA650 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB4E2455B8E1002DA650 /* CameraHandler.swift */; };
+		845D0480246812FC000F2BE6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D047F246812FC000F2BE6 /* Coordinator.swift */; };
+		845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D04832468D773000F2BE6 /* SearchCooordinator.swift */; };
+		845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D04862468D842000F2BE6 /* SettingsCoordinator.swift */; };
+		845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D04892468D870000F2BE6 /* GalleryCoordinator.swift */; };
+		845D048D2468D894000F2BE6 /* CameraCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D048C2468D894000F2BE6 /* CameraCordinator.swift */; };
 		8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487A21B24527CF000453F41 /* AppDelegate.swift */; };
 		8487A22524527CF400453F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8487A22424527CF400453F41 /* Assets.xcassets */; };
 		8487A22824527CF400453F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487A22624527CF400453F41 /* LaunchScreen.storyboard */; };
@@ -50,6 +55,11 @@
 		8452EB4A2455AB78002DA650 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		8452EB4B2455AB78002DA650 /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
 		8452EB4E2455B8E1002DA650 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		845D047F246812FC000F2BE6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		845D04832468D773000F2BE6 /* SearchCooordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCooordinator.swift; sourceTree = "<group>"; };
+		845D04862468D842000F2BE6 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		845D04892468D870000F2BE6 /* GalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCoordinator.swift; sourceTree = "<group>"; };
+		845D048C2468D894000F2BE6 /* CameraCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCordinator.swift; sourceTree = "<group>"; };
 		8487A21824527CF000453F41 /* PrivatePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivatePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8487A21B24527CF000453F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8487A22424527CF400453F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +101,7 @@
 		8452EB392455A789002DA650 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */,
+				845D047F246812FC000F2BE6 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 		8452EB3C2455A9F1002DA650 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				845D048B2468D888000F2BE6 /* CameraCordinator */,
 				8452EB402455AA21002DA650 /* CameraController.swift */,
 				8452EB4E2455B8E1002DA650 /* CameraHandler.swift */,
 			);
@@ -108,6 +119,7 @@
 		8452EB3D2455A9F8002DA650 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				845D04882468D862000F2BE6 /* GalleryCoordinator */,
 				8452EB422455AB25002DA650 /* GalleryController.swift */,
 				8452EB432455AB25002DA650 /* GalleryController.xib */,
 			);
@@ -117,6 +129,7 @@
 		8452EB3E2455A9FE002DA650 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				845D04852468D834000F2BE6 /* SettingsCoordinator */,
 				8452EB462455AB4A002DA650 /* SettingsController.swift */,
 				8452EB472455AB4A002DA650 /* SettingsController.xib */,
 			);
@@ -126,10 +139,59 @@
 		8452EB3F2455AA02002DA650 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				845D04822468D75E000F2BE6 /* SearchCooordinator */,
+				845D04812468D75B000F2BE6 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		845D04812468D75B000F2BE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				8452EB4A2455AB78002DA650 /* SearchController.swift */,
 				8452EB4B2455AB78002DA650 /* SearchController.xib */,
 			);
-			path = Search;
+			path = View;
+			sourceTree = "<group>";
+		};
+		845D04822468D75E000F2BE6 /* SearchCooordinator */ = {
+			isa = PBXGroup;
+			children = (
+				845D04832468D773000F2BE6 /* SearchCooordinator.swift */,
+			);
+			path = SearchCooordinator;
+			sourceTree = "<group>";
+		};
+		845D04852468D834000F2BE6 /* SettingsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				845D04862468D842000F2BE6 /* SettingsCoordinator.swift */,
+			);
+			path = SettingsCoordinator;
+			sourceTree = "<group>";
+		};
+		845D04882468D862000F2BE6 /* GalleryCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				845D04892468D870000F2BE6 /* GalleryCoordinator.swift */,
+			);
+			path = GalleryCoordinator;
+			sourceTree = "<group>";
+		};
+		845D048B2468D888000F2BE6 /* CameraCordinator */ = {
+			isa = PBXGroup;
+			children = (
+				845D048C2468D894000F2BE6 /* CameraCordinator.swift */,
+			);
+			path = CameraCordinator;
+			sourceTree = "<group>";
+		};
+		845D048E2468D9B2000F2BE6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		8487A20F24527CF000453F41 = {
@@ -155,10 +217,11 @@
 		8487A21A24527CF000453F41 /* PhotoBin */ = {
 			isa = PBXGroup;
 			children = (
+				845D048E2468D9B2000F2BE6 /* Root */,
+				8452EB3C2455A9F1002DA650 /* Camera */,
+				8452EB3D2455A9F8002DA650 /* Gallery */,
 				8452EB3F2455AA02002DA650 /* Search */,
 				8452EB3E2455A9FE002DA650 /* Settings */,
-				8452EB3D2455A9F8002DA650 /* Gallery */,
-				8452EB3C2455A9F1002DA650 /* Camera */,
 				8452EB392455A789002DA650 /* Coordinator */,
 				8487A21B24527CF000453F41 /* AppDelegate.swift */,
 				8487A22424527CF400453F41 /* Assets.xcassets */,
@@ -319,10 +382,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845D0480246812FC000F2BE6 /* Coordinator.swift in Sources */,
 				8452EB4F2455B8E1002DA650 /* CameraHandler.swift in Sources */,
 				8452EB3B2455A7BA002DA650 /* HomeTabBarController.swift in Sources */,
+				845D048D2468D894000F2BE6 /* CameraCordinator.swift in Sources */,
 				8452EB4C2455AB78002DA650 /* SearchController.swift in Sources */,
 				8452EB482455AB4A002DA650 /* SettingsController.swift in Sources */,
+				845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */,
+				845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */,
+				845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */,
 				8452EB412455AA21002DA650 /* CameraController.swift in Sources */,
 				8452EB442455AB25002DA650 /* GalleryController.swift in Sources */,
 				8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */,

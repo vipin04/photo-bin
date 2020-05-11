@@ -10,6 +10,8 @@ import UIKit
 
 class GalleryController: UIViewController {
 
+    weak var coordinator: GalleryCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class CameraController: UIViewController {
 
+    weak var coordinator: CameraCoordinator?
     private let cameraHandler = CameraHandler()
     
     override func viewDidLoad() {
