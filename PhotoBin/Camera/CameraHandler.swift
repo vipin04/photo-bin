@@ -16,32 +16,41 @@ enum CameraError: String, Error {
 
 class CameraHandler: NSObject {
     
-    weak var parentVC: UIViewController?
-    var imagePickedBlock: ((UIImage?) -> Void )?
+    weak var coordinator: CameraCoordinator?
     
     func openCamera(onVC vc: UIViewController) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            parentVC = vc
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.sourceType = .camera
-            parentVC?.present(picker, animated: true, completion: nil)
+            coordinator?.presentCameraPicker(picker: picker)
         }
     }
 }
 
 extension CameraHandler: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        parentVC?.dismiss(animated: true, completion: nil)
+        coordinator?.didCancelTakingImage()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            imagePickedBlock?(image)
-        } else {
-            imagePickedBlock?(nil)
+            imageCaptured(image: image)
         }
-        
-        parentVC?.dismiss(animated: true, completion: nil)
+    }
+    
+    private func imageCaptured(image: UIImage) {
+        guard let data = image.jpegData(compressionQuality: 0.2) else { return }
+        do {
+            let name = getImageName()
+            try FileStore.saveFile(fileName: name, data: data)
+            coordinator?.didFinishTakingImage(fileName: name)
+        } catch let error {
+            print("error saving file with error", error)
+        }
+    }
+    
+    private func getImageName() -> String {
+         "IMG" + String(Int(NSDate().timeIntervalSince1970))
     }
 }

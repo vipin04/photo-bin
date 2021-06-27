@@ -15,6 +15,7 @@ class CameraController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialSetup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,12 +24,11 @@ class CameraController: UIViewController {
         openCamera()
     }
     
+    private func initialSetup() {
+        cameraHandler.coordinator = coordinator
+    }
+    
     private func openCamera() {
-        cameraHandler.imagePickedBlock = { image in
-            if let capturedImage = image {
-                print(capturedImage)
-            }
-        }
         cameraHandler.openCamera(onVC: self)
     }
 }

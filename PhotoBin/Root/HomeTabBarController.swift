@@ -40,5 +40,20 @@ class MainTabBarController: UITabBarController {
         ]
         
         self.viewControllers = viewControllers
+        cameraCoordinator.delegate = self
+    }
+    
+    private func navigateToGallery() {
+        self.selectedIndex = viewControllers?.firstIndex(of: galleryCoordinator.navigationController) ?? 1
+    }
+}
+
+extension MainTabBarController: CameraCoordinatorDelegate {
+    func didCancelTakingImage() {
+        navigateToGallery()
+    }
+    
+    func didFinishTakingImage(fileName: String) {
+        navigateToGallery()
     }
 }

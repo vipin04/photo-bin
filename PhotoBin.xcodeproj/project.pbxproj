@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8440B3292688803100C63FBB /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3282688803100C63FBB /* FileStore.swift */; };
 		8452EB3B2455A7BA002DA650 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */; };
 		8452EB412455AA21002DA650 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB402455AA21002DA650 /* CameraController.swift */; };
 		8452EB442455AB25002DA650 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB422455AB25002DA650 /* GalleryController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8440B3282688803100C63FBB /* FileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStore.swift; sourceTree = "<group>"; };
 		8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		8452EB402455AA21002DA650 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8452EB422455AB25002DA650 /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8440B3272688801100C63FBB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8440B3282688803100C63FBB /* FileStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		8452EB392455A789002DA650 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 		8487A21A24527CF000453F41 /* PhotoBin */ = {
 			isa = PBXGroup;
 			children = (
+				8440B3272688801100C63FBB /* Storage */,
 				845D048E2468D9B2000F2BE6 /* Root */,
 				8452EB3C2455A9F1002DA650 /* Camera */,
 				8452EB3D2455A9F8002DA650 /* Gallery */,
@@ -390,6 +401,7 @@
 				8452EB482455AB4A002DA650 /* SettingsController.swift in Sources */,
 				845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */,
 				845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */,
+				8440B3292688803100C63FBB /* FileStore.swift in Sources */,
 				845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */,
 				8452EB412455AA21002DA650 /* CameraController.swift in Sources */,
 				8452EB442455AB25002DA650 /* GalleryController.swift in Sources */,
