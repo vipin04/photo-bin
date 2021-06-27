@@ -41,12 +41,4 @@ class MainTabBarController: UITabBarController {
         
         self.viewControllers = viewControllers
     }
-    
-    private func customise(controller: UIViewController,
-                           title: String,
-                           imageName: String) -> UIViewController {
-        controller.tabBarItem.image = UIImage(named: imageName)
-        controller.tabBarItem.title = title
-        return controller
-    }
 }
