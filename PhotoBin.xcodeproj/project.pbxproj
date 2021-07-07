@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8440B3292688803100C63FBB /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3282688803100C63FBB /* FileStore.swift */; };
+		8440B3292688803100C63FBB /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3282688803100C63FBB /* ImageStore.swift */; };
+		8440B32E2688EC0B00C63FBB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8440B32D2688EC0B00C63FBB /* SnapKit */; };
+		8440B3312688F1BA00C63FBB /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3302688F1BA00C63FBB /* GridView.swift */; };
+		8440B3332689052700C63FBB /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3322689052700C63FBB /* GridCell.swift */; };
 		8452EB3B2455A7BA002DA650 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */; };
 		8452EB412455AA21002DA650 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB402455AA21002DA650 /* CameraController.swift */; };
 		8452EB442455AB25002DA650 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB422455AB25002DA650 /* GalleryController.swift */; };
@@ -47,7 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8440B3282688803100C63FBB /* FileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStore.swift; sourceTree = "<group>"; };
+		8440B3282688803100C63FBB /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		8440B3302688F1BA00C63FBB /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		8440B3322689052700C63FBB /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		8452EB402455AA21002DA650 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8452EB422455AB25002DA650 /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8440B32E2688EC0B00C63FBB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,9 +109,18 @@
 		8440B3272688801100C63FBB /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				8440B3282688803100C63FBB /* FileStore.swift */,
+				8440B3282688803100C63FBB /* ImageStore.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		8440B32F2688F0FB00C63FBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8440B3302688F1BA00C63FBB /* GridView.swift */,
+				8440B3322689052700C63FBB /* GridCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8452EB392455A789002DA650 /* Coordinator */ = {
@@ -129,6 +144,7 @@
 		8452EB3D2455A9F8002DA650 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				8440B32F2688F0FB00C63FBB /* Views */,
 				845D04882468D862000F2BE6 /* GalleryCoordinator */,
 				8452EB422455AB25002DA650 /* GalleryController.swift */,
 				8452EB432455AB25002DA650 /* GalleryController.xib */,
@@ -276,6 +292,9 @@
 			dependencies = (
 			);
 			name = PhotoBin;
+			packageProductDependencies = (
+				8440B32D2688EC0B00C63FBB /* SnapKit */,
+			);
 			productName = PhotoBin;
 			productReference = 8487A21824527CF000453F41 /* PrivatePhotos.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +367,9 @@
 				Base,
 			);
 			mainGroup = 8487A20F24527CF000453F41;
+			packageReferences = (
+				8440B32C2688EC0B00C63FBB /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 8487A21924527CF000453F41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -401,11 +423,13 @@
 				8452EB482455AB4A002DA650 /* SettingsController.swift in Sources */,
 				845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */,
 				845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */,
-				8440B3292688803100C63FBB /* FileStore.swift in Sources */,
+				8440B3292688803100C63FBB /* ImageStore.swift in Sources */,
 				845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */,
+				8440B3312688F1BA00C63FBB /* GridView.swift in Sources */,
 				8452EB412455AA21002DA650 /* CameraController.swift in Sources */,
 				8452EB442455AB25002DA650 /* GalleryController.swift in Sources */,
 				8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */,
+				8440B3332689052700C63FBB /* GridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +754,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8440B32C2688EC0B00C63FBB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8440B32D2688EC0B00C63FBB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8440B32C2688EC0B00C63FBB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8487A21024527CF000453F41 /* Project object */;
 }

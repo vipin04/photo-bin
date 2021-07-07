@@ -40,10 +40,9 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
     }
     
     private func imageCaptured(image: UIImage) {
-        guard let data = image.jpegData(compressionQuality: 0.2) else { return }
         do {
             let name = getImageName()
-            try FileStore.saveFile(fileName: name, data: data)
+            try ImageStore.saveImage(fileName: name, image: image)
             coordinator?.didFinishTakingImage(fileName: name)
         } catch let error {
             print("error saving file with error", error)
