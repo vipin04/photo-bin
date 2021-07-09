@@ -19,15 +19,14 @@ class GridView: UIView {
     
     private var collectionView: UICollectionView?
     private lazy var dataSource = createDataSource()
-    private let selectedImageName: String?
     private var photos: [Photo]?
     
     private let interCellSpacing: CGFloat = 1
-    
     private let itemsPerRow: CGFloat = 3
     
-    required init(selectedImageName: String? = nil) {
-        self.selectedImageName = selectedImageName
+    var tappedOnPhoto: ((Photo) -> ())?
+    
+    required init() {
         super.init(frame: .zero)
         configureView()
     }
@@ -84,6 +83,13 @@ class GridView: UIView {
             return cell
         }
         return dataSource
+    }
+}
+
+extension GridView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = dataSource?.itemIdentifier(for: indexPath) else { return }
+        self.tappedOnPhoto?(photo)
     }
 }
 

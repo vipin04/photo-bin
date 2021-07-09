@@ -24,4 +24,9 @@ class GalleryCoordinator: Coordinator {
         
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func didTapOnPhoto(photo: Photo) {
+        let vc = GalleryFullScreenVC(withPhoto: photo)
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

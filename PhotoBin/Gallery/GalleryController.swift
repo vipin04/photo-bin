@@ -35,6 +35,9 @@ class GalleryController: UIViewController {
     
     private func setupViews() {
         view.addSubview(gridView)
+        gridView.tappedOnPhoto = { [weak self] photo in
+            self?.coordinator?.didTapOnPhoto(photo: photo)
+        }
         setupConstraints()
     }
     

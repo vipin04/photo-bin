@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		841560792696FE46007522F5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841560782696FE46007522F5 /* Photo.swift */; };
 		8415607C26972211007522F5 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415607B26972211007522F5 /* UserDefaultsExtension.swift */; };
+		8415607E26985BDF007522F5 /* GalleryFullScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415607D26985BDF007522F5 /* GalleryFullScreenVC.swift */; };
+		8415608026985C6D007522F5 /* GalleryFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415607F26985C6D007522F5 /* GalleryFullScreenView.swift */; };
 		8440B3292688803100C63FBB /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3282688803100C63FBB /* ImageStore.swift */; };
 		8440B32E2688EC0B00C63FBB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8440B32D2688EC0B00C63FBB /* SnapKit */; };
 		8440B3312688F1BA00C63FBB /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3302688F1BA00C63FBB /* GridView.swift */; };
@@ -16,7 +18,6 @@
 		8452EB3B2455A7BA002DA650 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */; };
 		8452EB412455AA21002DA650 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB402455AA21002DA650 /* CameraController.swift */; };
 		8452EB442455AB25002DA650 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB422455AB25002DA650 /* GalleryController.swift */; };
-		8452EB452455AB25002DA650 /* GalleryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452EB432455AB25002DA650 /* GalleryController.xib */; };
 		8452EB482455AB4A002DA650 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB462455AB4A002DA650 /* SettingsController.swift */; };
 		8452EB492455AB4A002DA650 /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8452EB472455AB4A002DA650 /* SettingsController.xib */; };
 		8452EB4C2455AB78002DA650 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452EB4A2455AB78002DA650 /* SearchController.swift */; };
@@ -54,13 +55,14 @@
 /* Begin PBXFileReference section */
 		841560782696FE46007522F5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8415607B26972211007522F5 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		8415607D26985BDF007522F5 /* GalleryFullScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFullScreenVC.swift; sourceTree = "<group>"; };
+		8415607F26985C6D007522F5 /* GalleryFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFullScreenView.swift; sourceTree = "<group>"; };
 		8440B3282688803100C63FBB /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		8440B3302688F1BA00C63FBB /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		8440B3322689052700C63FBB /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		8452EB3A2455A7BA002DA650 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		8452EB402455AA21002DA650 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8452EB422455AB25002DA650 /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
-		8452EB432455AB25002DA650 /* GalleryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryController.xib; sourceTree = "<group>"; };
 		8452EB462455AB4A002DA650 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		8452EB472455AB4A002DA650 /* SettingsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
 		8452EB4A2455AB78002DA650 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				8440B3302688F1BA00C63FBB /* GridView.swift */,
 				8440B3322689052700C63FBB /* GridCell.swift */,
+				8415607F26985C6D007522F5 /* GalleryFullScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,7 +170,7 @@
 				8440B32F2688F0FB00C63FBB /* Views */,
 				845D04882468D862000F2BE6 /* GalleryCoordinator */,
 				8452EB422455AB25002DA650 /* GalleryController.swift */,
-				8452EB432455AB25002DA650 /* GalleryController.xib */,
+				8415607D26985BDF007522F5 /* GalleryFullScreenVC.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -409,7 +412,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8452EB492455AB4A002DA650 /* SettingsController.xib in Resources */,
-				8452EB452455AB25002DA650 /* GalleryController.xib in Resources */,
 				8452EB4D2455AB78002DA650 /* SearchController.xib in Resources */,
 				8487A22824527CF400453F41 /* LaunchScreen.storyboard in Resources */,
 				8487A22524527CF400453F41 /* Assets.xcassets in Resources */,
@@ -447,6 +449,7 @@
 				845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */,
 				845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */,
 				8440B3292688803100C63FBB /* ImageStore.swift in Sources */,
+				8415608026985C6D007522F5 /* GalleryFullScreenView.swift in Sources */,
 				845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */,
 				8440B3312688F1BA00C63FBB /* GridView.swift in Sources */,
 				8415607C26972211007522F5 /* UserDefaultsExtension.swift in Sources */,
@@ -454,6 +457,7 @@
 				8452EB442455AB25002DA650 /* GalleryController.swift in Sources */,
 				8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */,
 				8440B3332689052700C63FBB /* GridCell.swift in Sources */,
+				8415607E26985BDF007522F5 /* GalleryFullScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
