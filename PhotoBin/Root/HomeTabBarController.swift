@@ -41,6 +41,7 @@ class MainTabBarController: UITabBarController {
         
         self.viewControllers = viewControllers
         cameraCoordinator.delegate = self
+        galleryCoordinator.delegate = self
     }
     
     private func navigateToGallery() {
@@ -48,12 +49,32 @@ class MainTabBarController: UITabBarController {
     }
 }
 
-extension MainTabBarController: CameraCoordinatorDelegate {
+extension MainTabBarController: CameraCoordinatorDelegate, GalleryCoordinatorDelegate {
     func didCancelTakingImage() {
         navigateToGallery()
     }
     
     func didFinishTakingImage(photo: Photo) {
         navigateToGallery()
+    }
+    
+    func detailsScreenShown() {
+        UIView.animate(withDuration: 0.3) {[weak self] in
+            guard let oldFrame = self?.tabBar.frame else { return }
+            self?.tabBar.frame = CGRect(x:oldFrame.minX,
+                                        y:oldFrame.minY + oldFrame.height,
+                                        width: oldFrame.width,
+                                        height: oldFrame.height)
+        }
+    }
+    
+    func rootScreenShown() {
+        UIView.animate(withDuration: 0.3) {[weak self] in
+            guard let oldFrame = self?.tabBar.frame else { return }
+            self?.tabBar.frame = CGRect(x:oldFrame.minX,
+                                        y:oldFrame.minY - oldFrame.height,
+                                        width: oldFrame.width,
+                                        height: oldFrame.height)
+        }
     }
 }
