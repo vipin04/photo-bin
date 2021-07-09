@@ -9,10 +9,18 @@
 import UIKit
 import SnapKit
 
+enum Section {
+    case main
+}
+typealias DataSource = UICollectionViewDiffableDataSource<Section, Photo>
+typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Photo>
+
 class GridView: UIView {
+    
     private var collectionView: UICollectionView?
+    private lazy var dataSource = createDataSource()
     private let selectedImageName: String?
-    private var images: [UIImage?]?
+    private var photos: [Photo]?
     
     private let interCellSpacing: CGFloat = 1
     
@@ -29,9 +37,17 @@ class GridView: UIView {
         fatalError("init(coder) has not been implemented")
     }
     
-    func setImages(images: [UIImage?]) {
-        self.images = images
-        self.collectionView?.reloadData()
+    func setPhotos(photos: [Photo]) {
+        self.photos = photos
+        applySnapshot()
+    }
+    
+    func applySnapshot(animatingDifference: Bool = true) {
+        guard let photosArr = photos else { return }
+        var snapshot = Snapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(photosArr)
+        dataSource?.apply(snapshot, animatingDifferences: animatingDifference)
     }
     
     private func configureView() {
@@ -54,23 +70,20 @@ class GridView: UIView {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
         collectionView?.backgroundColor = .white
-        collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.isPagingEnabled = true
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.register(GridCell.self, forCellWithReuseIdentifier: "cellId")
     }
-}
-
-extension GridView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.images?.count ?? 0
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        (cell as? GridCell)?.setImage(img: self.images?[indexPath.row])
-        return cell
+    private func createDataSource() -> DataSource? {
+        guard let cView = collectionView else { return nil }
+        let dataSource = DataSource(collectionView: cView) { (colView, indexPath, photoModel) -> UICollectionViewCell? in
+            let cell = colView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+            (cell as? GridCell)?.setPhoto(photo: self.photos?[indexPath.row])
+            return cell
+        }
+        return dataSource
     }
 }
 
@@ -79,9 +92,9 @@ extension GridView: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace = interCellSpacing * (itemsPerRow) - interCellSpacing
-        let availableWidth = self.frame.width - paddingSpace
+        //TODO: Replace UIScreen width with the GridView's width
+        let availableWidth = UIScreen.main.bounds.width - paddingSpace
         let widthPerItem =  availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-
 }

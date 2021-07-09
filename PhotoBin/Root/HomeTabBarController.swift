@@ -53,7 +53,7 @@ extension MainTabBarController: CameraCoordinatorDelegate {
         navigateToGallery()
     }
     
-    func didFinishTakingImage(fileName: String) {
+    func didFinishTakingImage(photo: Photo) {
         navigateToGallery()
     }
 }

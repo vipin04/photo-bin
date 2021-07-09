@@ -34,7 +34,7 @@ class GridCell: UICollectionViewCell {
         }
     }
     
-    func setImage(img: UIImage?) {
-        self.imageView?.image = img
+    func setPhoto(photo: Photo?) {
+        self.imageView?.image = photo?.image
     }
 }

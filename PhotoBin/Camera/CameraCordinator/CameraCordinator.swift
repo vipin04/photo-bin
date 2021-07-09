@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CameraCoordinatorDelegate: AnyObject {
-    func didFinishTakingImage(fileName: String)
+    func didFinishTakingImage(photo: Photo)
     func didCancelTakingImage()
 }
 
@@ -43,9 +43,9 @@ class CameraCoordinator: Coordinator {
         delegate?.didCancelTakingImage()
     }
     
-    func didFinishTakingImage(fileName: String) {
+    func didFinishTakingImage(photo: Photo) {
         cameraVC.dismiss(animated: true, completion: nil)
-        delegate?.didFinishTakingImage(fileName: fileName)
+        delegate?.didFinishTakingImage(photo: photo)
     }
 }
 

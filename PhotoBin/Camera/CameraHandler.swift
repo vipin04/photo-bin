@@ -41,15 +41,10 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
     
     private func imageCaptured(image: UIImage) {
         do {
-            let name = getImageName()
-            try ImageStore.saveImage(fileName: name, image: image)
-            coordinator?.didFinishTakingImage(fileName: name)
+            let savedPhoto = try ImageStore.saveImage(image: image)
+            coordinator?.didFinishTakingImage(photo: savedPhoto)
         } catch let error {
             print("error saving file with error", error)
         }
-    }
-    
-    private func getImageName() -> String {
-         "IMG" + String(Int(NSDate().timeIntervalSince1970))
     }
 }

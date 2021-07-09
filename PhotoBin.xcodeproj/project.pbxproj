@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841560792696FE46007522F5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841560782696FE46007522F5 /* Photo.swift */; };
+		8415607C26972211007522F5 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415607B26972211007522F5 /* UserDefaultsExtension.swift */; };
 		8440B3292688803100C63FBB /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3282688803100C63FBB /* ImageStore.swift */; };
 		8440B32E2688EC0B00C63FBB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8440B32D2688EC0B00C63FBB /* SnapKit */; };
 		8440B3312688F1BA00C63FBB /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440B3302688F1BA00C63FBB /* GridView.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841560782696FE46007522F5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		8415607B26972211007522F5 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		8440B3282688803100C63FBB /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		8440B3302688F1BA00C63FBB /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		8440B3322689052700C63FBB /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
@@ -106,6 +110,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841560772696FE21007522F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				841560782696FE46007522F5 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8415607A269721FF007522F5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8415607B26972211007522F5 /* UserDefaultsExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8440B3272688801100C63FBB /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +263,8 @@
 		8487A21A24527CF000453F41 /* PhotoBin */ = {
 			isa = PBXGroup;
 			children = (
+				8415607A269721FF007522F5 /* Utils */,
+				841560772696FE21007522F5 /* Models */,
 				8440B3272688801100C63FBB /* Storage */,
 				845D048E2468D9B2000F2BE6 /* Root */,
 				8452EB3C2455A9F1002DA650 /* Camera */,
@@ -421,11 +443,13 @@
 				845D048D2468D894000F2BE6 /* CameraCordinator.swift in Sources */,
 				8452EB4C2455AB78002DA650 /* SearchController.swift in Sources */,
 				8452EB482455AB4A002DA650 /* SettingsController.swift in Sources */,
+				841560792696FE46007522F5 /* Photo.swift in Sources */,
 				845D04872468D842000F2BE6 /* SettingsCoordinator.swift in Sources */,
 				845D048A2468D870000F2BE6 /* GalleryCoordinator.swift in Sources */,
 				8440B3292688803100C63FBB /* ImageStore.swift in Sources */,
 				845D04842468D773000F2BE6 /* SearchCooordinator.swift in Sources */,
 				8440B3312688F1BA00C63FBB /* GridView.swift in Sources */,
+				8415607C26972211007522F5 /* UserDefaultsExtension.swift in Sources */,
 				8452EB412455AA21002DA650 /* CameraController.swift in Sources */,
 				8452EB442455AB25002DA650 /* GalleryController.swift in Sources */,
 				8487A21C24527CF000453F41 /* AppDelegate.swift in Sources */,
@@ -598,6 +622,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HAFS52JT;
 				INFOPLIST_FILE = PhotoBin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,6 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HAFS52JT;
 				INFOPLIST_FILE = PhotoBin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

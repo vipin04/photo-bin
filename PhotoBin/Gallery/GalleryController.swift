@@ -29,8 +29,8 @@ class GalleryController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        gridView.setImages(images: getGalleryImages())
+        super.viewWillAppear(animated)
+        gridView.setPhotos(photos: getSavedPhotos())
     }
     
     private func setupViews() {
@@ -44,7 +44,7 @@ class GalleryController: UIViewController {
         }
     }
     
-    private func getGalleryImages() -> [UIImage?] {
-        return ImageStore.getImages()
+    private func getSavedPhotos() -> [Photo] {
+        return ImageStore.getSavedPhotos()
     }
 }
